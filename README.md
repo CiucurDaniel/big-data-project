@@ -44,3 +44,40 @@ From withhin the node, we can use `hdfs` commands (eg: hdfs dfs -ls ) or the mai
 # Run map reduce job from the path where you have the jar file.
 hadoop jar <jar_file_name> <class_name> input output
 ```
+
+### Hadoop endpoints
+
+This setup will also give you some usefull endpoints to use while developing.
+
+```
+* Namenode: http://localhost:9870/dfshealth.html#tab-overview
+* History server: http://localhost:8188/applicationhistory
+* Datanode: http://localhost:9864/
+* Nodemanager: http://localhost:8042/node
+* Resource manager: http://localhost:8088/
+```
+
+## Run example world count
+
+```
+# Copy jar in namenode
+docker cp .\submit\WordCount.jar e5d0addf59a1:/tmp
+
+# Enter the namenode container
+docker exec
+
+cd /tmp 
+
+# Run the code
+$HADOOP_HOME/bin/hadoop jar WordCount.jar WordCount /input /output
+```
+
+## Course commands
+
+```
+hadoop fs -mkdir /data2
+hadoop fs -ls /
+```
+
+
+
