@@ -22,6 +22,7 @@ public class IntSumReducer extends Reducer<Text, IntWritable, Text, IntWritable>
         result.set(sum);
 
         if (sum > minimumSupport) {
+            System.out.println("DEBUG: Found item above min support level -> ");
             context.write(key, result);
         }
     }
