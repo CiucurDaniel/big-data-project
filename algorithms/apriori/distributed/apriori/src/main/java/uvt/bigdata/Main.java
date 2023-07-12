@@ -21,6 +21,7 @@ public class Main {
 
             Job job = Job.getInstance(conf, "Item set iteration:" + i);
             job.setJarByClass(Main.class);
+
             if (i == 1) {
                 job.setMapperClass(FirstPassMapper.class);
             } else {
@@ -29,6 +30,7 @@ public class Main {
 
             job.setCombinerClass(IntSumReducer.class);
             job.setReducerClass(IntSumReducer.class);
+
             job.setOutputKeyClass(Text.class);
             job.setOutputValueClass(IntWritable.class);
 
