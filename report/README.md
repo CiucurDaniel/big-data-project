@@ -1,3 +1,3 @@
 # Report
 
-This folder contains the report and the presentation.
+This folder contains the report, the presentation and the report about the algoritm implemented.

@@ -22,29 +22,6 @@ docker-compose --version
 git --version
 ```
 
-Steps to run Hadoop with this setup:
-
-```
-git clone https://github.com/big-data-europe/docker-hadoop
-
-docker-compose up -detach
-
-docker ps
-```
-
-In order to interact with the namenode use docker exec:
-
-```
-docker exec -it namenode bash
-```
-
-From withhin the node, we can use `hdfs` commands (eg: hdfs dfs -ls ) or the main goal, run Hadoop Map Reduce Jobs.
-
-```
-# Run map reduce job from the path where you have the jar file.
-hadoop jar <jar_file_name> <class_name> input output
-```
-
 ### Hadoop endpoints
 
 This setup will also give you some usefull endpoints to use while developing.
@@ -55,28 +32,6 @@ This setup will also give you some usefull endpoints to use while developing.
 * Datanode: http://localhost:9864/
 * Nodemanager: http://localhost:8042/node
 * Resource manager: http://localhost:8088/
-```
-
-## Run example world count
-
-```
-# Copy jar in namenode
-docker cp .\submit\WordCount.jar e5d0addf59a1:/tmp
-
-# Enter the namenode container
-docker exec
-
-cd /tmp 
-
-# Run the code
-$HADOOP_HOME/bin/hadoop jar WordCount.jar WordCount /input /output
-```
-
-## Course commands
-
-```
-hadoop fs -mkdir /data2
-hadoop fs -ls /
 ```
 
 
