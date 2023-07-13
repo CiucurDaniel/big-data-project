@@ -15,7 +15,7 @@ hadoop fs -mkdir /store
 
 hadoop fs -copyFromLocal store_data.csv /store
 
-$HADOOP_HOME/bin/hadoop jar apriori-1.0-SNAPSHOT.jar uvt.bigdata.Main /mushroom /output 20
+$HADOOP_HOME/bin/hadoop jar apriori-1.0-SNAPSHOT.jar uvt.bigdata.Main /store /output 20
 ```
 
 # Example outputs
